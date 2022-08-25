@@ -158,31 +158,3 @@ main > #todo > .will_do > .will_do_text:disabled {
     background: none;
     text-decoration: line-through;
 }
-
-/*
-main > #todo > input[type=text] {
-    position: absolute;
-    border: none;
-    outline: none;
-    width: 400px;
-    height: 40px;
-
-    font-size: 25px;
-    left: 80px;
-    top: 10px;
-}
-
-main > #todo > .input_border {
-    display: none;
-}
-
-main > #todo > input[type=text]:focus + .input_border {
-    position: absolute;
-    display: inline-block;
-
-    border: 1px solid rgb(197, 197, 197);
-    width: 398px;
-    left: 80px;
-    top: 50px;
-}
-*/
