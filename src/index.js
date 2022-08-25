@@ -1,5 +1,4 @@
 let add = document.getElementById('add_button');
-console.log(add);
 
 add.addEventListener('click', () => {
   const willDo = document.getElementsByClassName('will_do')[0];
