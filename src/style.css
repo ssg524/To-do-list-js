@@ -3,12 +3,6 @@
     margin: 0px;
 }
 
-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 header {
     position: relative;
     width: 100vw;
@@ -32,9 +26,6 @@ header > #add_button {
     border: 2px solid green;
     color: green;
     background: none;
-    /* border: 1px solid #B8DCE3;
-    background-color: #B8DCE3;
-    */
     border-radius: 10px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -46,7 +37,7 @@ header > #add_button {
     transform: translateY(-50%);
 }
 
-header > .add_button:active {
+header > #add_button:active {
     border: none;
     background-color: green;
     color: white;
@@ -109,7 +100,7 @@ main > #todo > .will_do > .checkbox > .on_check {
     border-radius: 50%;
 }
 
-main > #todo > .will_do > .checkbox > input:checked + .on_check {
+main > #todo > .will_do > .checkbox > input[type=checkbox]:checked + .on_check {
     background-color: green;
     border: 2px solid green;
 }
@@ -120,7 +111,7 @@ main > #todo > .will_do > .checkbox > input:checked + .on_check {
     display: none;
 }
 
-main > #todo > .will_do > .checkbox > input:checked + .on_check::after {
+main > #todo > .will_do > .checkbox > input[type=checkbox]:checked + .on_check::after {
     display: block;
 }
 
@@ -136,7 +127,7 @@ main > #todo > .will_do > .checkbox > .on_check::after {
     transform: rotate(45deg);
 }
 
-main > #todo > .will_do > .will_do_text {
+main > #todo > .will_do > input[type=text] {
     position: absolute;
     font-size: 25px;
 
@@ -149,12 +140,28 @@ main > #todo > .will_do > .will_do_text {
     border: none;
 }
 
-main > #todo > .will_do > .will_do_text:focus {
+main > #todo > .will_do > input[type=text]:focus {
     outline: none;
     border-bottom: 1px solid rgb(192, 192, 192);
 }
 
-main > #todo > .will_do > .will_do_text:disabled {
+main > #todo > .will_do > input[type=text]:disabled {
     background: none;
-    text-decoration: line-through;
+}
+
+main > #todo > .will_do > button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+
+    font-weight: 700;
+    background: none;
+    border: none;
+    border-radius: 50%;
+
+    right: 0px;
+}
+
+main > #todo > .will_do > button:active {
+    color: green;
 }
