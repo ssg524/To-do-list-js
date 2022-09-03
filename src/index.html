@@ -4,25 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>TO DO LIST</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 id="page_title">Things to do</h1>
-        <button id="add_button" type="button">+</button>
+        <h1 id="main-title">TO DO LIST</h1>
+        <input id="todo-input" type="text" placeholder="할 일..." value="">
+        <button id="todo-button" type="button">+</button>
     </header>
-    <main id="do_list">
-        <ul id="todo">
-            <li class="will_do">
-                <label class="checkbox">
-                    <input type="checkbox">
-                    <span class="on_check"></span>
-                </label>
-                <input type="text" placeholder="할 일..." maxlength="16">
-                <button type="button">X</button>
-            </li>
-        </ul>
+    <main id="main">
     </main>
     <script src="app.js"></script>
 </body>
