@@ -60,7 +60,8 @@ main {
 }
 
 main div {
-  position: relative;
+  display: flex;
+  align-items: center;
   width: 65%;
   height: 50px;
 
@@ -81,18 +82,10 @@ main div input[type=text]:focus {
   outline: none;
 }
 
-div .todo-content, div .edit-button, div .delete-button {
-  position: absolute;
-  display: inline-block;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 /* 체크 박스 */
 div .todo-check-box {
   display: block;
   position: relative;
-  margin: 5px;
 }
 
 div .todo-check {
@@ -103,11 +96,10 @@ div .todo-check {
 }
 
 div .todo-check-custom {
-  position: absolute;
-  width: 40px; 
+  display: block;
+  margin: 0 auto;
+  width: 40px;
   height: 40px;
-  top: 0;
-  left: 0;
 }
 
 div .todo-check-custom::after {
@@ -120,8 +112,8 @@ div .todo-check + .todo-check-custom::after {
   height: 20px;
   border: solid gray;
   border-width: 0 4px 4px 0;
-  margin-left: 12px;
-  margin-top: 4px;
+  margin-left: 15px;
+  margin-top: 8px;
 
   transform: rotate(45deg);
 }
@@ -132,8 +124,8 @@ div .todo-check:checked + .todo-check-custom::after {
   height: 20px;
   border: solid green;
   border-width: 0 4px 4px 0;
-  margin-left: 12px;
-  margin-top: 4px;
+  margin-left: 15px;
+  margin-top: 8px;
 
   transform: rotate(45deg);
 }
@@ -141,11 +133,10 @@ div .todo-check:checked + .todo-check-custom::after {
 /* 할 일 텍스트 */
 div .todo-content {
   font-size: 18px;
-  left: 55px;
-  top: 50%;
-  transform: translateY(-50%);
 
   width: 70%;
+  margin-left: 10px;
+  margin-right: 20%;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -153,18 +144,15 @@ div .todo-content {
 }
 
 div .edit-button, div .delete-button {
+  margin-left: 15px;
   width: 30px;
   height: 30px;
   border: none;
   background-color: white;
 }
 
-div .edit-button {
-  right: 55px;
-}
-
 div .delete-button {
-  right: 1%;
+  margin-right: 10px;
 }
 
 div .edit-button img, div .delete-button img {

@@ -1,48 +1,19 @@
 const makeDiv = value => {
-  const $todo = document.createElement('div');
-
-  // 체크 박스
-  const $checkBox = document.createElement('label');
-  $checkBox.className = "todo-check-box";
-
-  const $checkInput = document.createElement('input');
-  $checkInput.setAttribute('type', 'checkbox');
-  $checkInput.className = 'todo-check';
+  const templete 
+  = `<label>
+        <input type="checkbox" class="todo-check">
+        <span class="todo-check-custom"></span>
+    </label>
+    <p class="todo-content">${value}</p>
+    <button type="button" class="edit-button"><img src="../res/edit.png" /></button>
+    <button type="button" class="delete-button"><img src="../res/delete.png" /></button>
+</label>`;
   
-  const $checkSpan = document.createElement('span');
-  $checkSpan.className = 'todo-check-custom';
-
-  $checkBox.appendChild($checkInput);
-  $checkBox.appendChild($checkSpan);
-
-  // 할 일 텍스트
-  const $todoContent = document.createElement('p');
-  $todoContent.textContent = value;
-  $todoContent.className = "todo-content";
-
-  // edit button
-  const $editButton = document.createElement('button');
-  $editButton.setAttribute('type', 'button');
-  $editButton.className = "edit-button";
-  const $editImg = document.createElement('img');
-  $editImg.src = '../res/edit.png';
-  $editButton.appendChild($editImg);
-
-  // delete button
-  const $deleteButton = document.createElement('button');
-  $deleteButton.setAttribute('type', 'button');
-  $deleteButton.className = "delete-button";
-  const $delImg = document.createElement('img');
-  $delImg.src = '../res/delete.png';
-  $deleteButton.appendChild($delImg);
-
-  $todo.appendChild($checkBox);
-  $todo.appendChild($todoContent);
-  $todo.appendChild($editButton);
-  $todo.appendChild($deleteButton);
-
-  return $todo;
-}
+  const todo = document.getElementById('main');
+  const div = document.createElement('div');
+  div.innerHTML = templete;
+  todo.appendChild(div);
+};
 
 const enter = (event) => {
   let value = 0;
@@ -58,9 +29,8 @@ const enter = (event) => {
     $addInput.value = '';
   }
   
-  const $todo = makeDiv(value);
-  document.getElementById('main').appendChild($todo);
-}
+  makeDiv(value);
+};
 
 const edit = (parent) => {
   const $editInput = document.createElement('input');
@@ -90,7 +60,7 @@ const edit = (parent) => {
 
     pTag.textContent = event.target.value;
   });
-}
+};
 
 
 const $addInput = document.getElementById('todo-input');
